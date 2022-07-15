@@ -1,0 +1,56 @@
+.inputEntry{
+    width: 370px;
+    height: 25px;
+    margin-top: 10px;
+}
+#addressEntry{
+    width: 370px;
+    height: 130px;
+    margin-top: 10px;
+}
+#labelDiv{
+    margin-top: 10px;
+    width: 100px;
+    margin-right:40px
+}
+.parentform{
+    background-color: rgb(202, 193, 193);
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow:20px 25px 20px black;
+
+}
+.genderparent{
+    margin-top:10px
+}
+.addrssparent{
+    margin-top:-60px;
+}
+.registerbtn{
+    background-color: green;
+     color: white;
+     width: 100px;
+     height: 30px;
+     border-radius: 8px;
+     margin-top:40px
+}
+.parentform td{
+    text-align: left;
+}
+.inputDiv{
+    height: 50px;
+}
+.showdetails{
+    text-align: left;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 50px;
+    margin: 10%;
+}
+.showdetails tr{
+    margin: 10px;
+}
