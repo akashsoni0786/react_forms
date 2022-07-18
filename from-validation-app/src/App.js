@@ -39,6 +39,7 @@ export class App extends Component {
       errormqualiempty: "",
       errormmailempty: "",
       errormmobileempty: "",
+      erroraddress : "",
 
       registeredData: {
         sname: "",
@@ -245,7 +246,7 @@ export class App extends Component {
         errormmobileempty: "Field is empty",
       });
     }
-    if (this.state.address === "") {
+    if (this.state.myaddress === "") {
       this.setState({
         erroraddress: "Field is empty",
       });
