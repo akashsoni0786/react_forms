@@ -13,6 +13,9 @@ export class App extends Component {
       moneyex: "",
       catgry: "",
       expences: [],
+      catgryshow: "",
+      catexpshow: 0,
+      total: 0
     };
   }
   category = (e) => {
@@ -34,6 +37,9 @@ export class App extends Component {
     }
   };
   addexpences = (e) => {
+    document.getElementById("addexpencebtn").innerHTML = "Add transaction";
+    document.getElementById("addexpencebtn").style.backgroundColor = "#9c88ff";
+    document.getElementById("addexpencebtn").style.color = "white"
     if (this.state.catgry === "") {
       alert("Choose category");
     } else if (this.state.moneyex <= 0 || this.state.moneyex <= 0.0) {
@@ -55,27 +61,79 @@ export class App extends Component {
     }
   };
   deletebtn = (e) => {
-    alert(e.target.id);
-    var ar = [...this.state.expences];
     this.setState({
-      expences: ar.filter( exp => exp.id ===  e.target.id ),
+      expences: this.state.expences.filter((exp) => exp.id != e.target.id),
     });
-    
   };
   editbtn = (e) => {
-    alert(e.target.id);
-    var pos = parseInt(e.target.id) - 1;
-    console.log(this.state.expences);
+    document.getElementById("addexpencebtn").innerHTML = "Update";
+    document.getElementById("addexpencebtn").style.backgroundColor = "red";
+    document.getElementById("addexpencebtn").style.color = "white"
     this.state.expences.map((i) => {
-      if (i.id === e.target.id) {
-        console.log(this.state.expences);
+      if (i.id == e.target.id) {
         this.setState({
-          expences: this.state.expences,
+          moneyex: i.amount,
+          expences: this.state.expences.filter((exp) => exp.id != e.target.id),
+          balance: parseFloat(this.state.balance) + parseFloat(i.amount),
+          expance: parseFloat(this.state.expance) - parseFloat(i.amount),
+          catgry: i.text,
         });
       }
     });
   };
+  categoryforexpenceshow = (e) => {
+    if (e.target.value == "Grocery") {
+      
+      this.state.expences.map((i)=>{
+        if(i.text == "Grocery"){
+          this.state.total = parseFloat(this.state.total)+parseFloat(i.amount)
+        }
+      })
+      this.setState({
+        catgryshow: "Grocery",
+        catexpshow: this.state.total,
+      });
+    }
 
+    if (e.target.value == "Veggies") {
+      
+      this.state.expences.map((i)=>{
+        if(i.text == "Veggies"){
+          this.state.total = parseFloat(this.state.total)+parseFloat(i.amount)
+        }
+      })
+      this.setState({
+        catgryshow: "Veggies",
+        catexpshow: this.state.total,
+      });
+    }
+    if (e.target.value == "Travelling") {
+      
+      this.state.expences.map((i)=>{
+        if(i.text == "Travelling"){
+          this.state.total = parseFloat(this.state.total)+parseFloat(i.amount)
+        }
+      })
+      this.setState({
+        catgryshow: "Travelling",
+        catexpshow: this.state.total,
+      });
+    }
+    if (e.target.value == "Miscellaneous") {
+      
+      this.state.expences.map((i)=>{
+        if(i.text == "Miscellaneous"){
+          this.state.total = parseFloat(this.state.total)+parseFloat(i.amount)
+        }
+      })
+      this.setState({
+        catgryshow: "Miscellaneous",
+        catexpshow: this.state.total,
+      });
+    }
+   
+    
+  };
   render() {
     return (
       <div className="">
@@ -120,6 +178,24 @@ export class App extends Component {
           <button className="btn" onClick={this.addbalance}>
             Add Balance
           </button>
+          <h3>Individual Expance Categorywise</h3>
+          <select
+            onChange={this.categoryforexpenceshow}
+            className="form-control"
+            id="selectcategory"
+          >
+            <option selected>Select Category</option>
+            <option>Grocery</option>
+            <option>Veggies</option>
+            <option>Travelling</option>
+            <option>Miscellaneous</option>
+          </select>
+          <ul id="list" className="list" name="historyy">
+          <li className="minus">
+            {this.state.catgryshow}
+            <span>{this.state.catexpshow}</span>
+          </li></ul>
+
           <h3>Add new transaction</h3>
 
           <div className="form-control">
@@ -156,7 +232,7 @@ export class App extends Component {
               placeholder="Enter amount..."
             />
           </div>
-          <button className="btn" onClick={this.addexpences}>
+          <button id="addexpencebtn" className="btn" onClick={this.addexpences}>
             Add transaction
           </button>
           <h3>History</h3>
