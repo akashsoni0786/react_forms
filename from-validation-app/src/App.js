@@ -122,128 +122,65 @@ export class App extends Component {
     });
   };
   showdetails = () => {
-    console.log(this.state.registeredData)
-    Object.keys(this.state.registeredData).map((item)=>
-      {
-        // console.log(this.state.registeredData[item])
-        return (
-          <div className="showdetails">
-            <table>
-              <tr>
-                <th>Name : </th>
-                <td>{this.state.registeredData[item].sname}</td>
-              </tr>
-              <tr>
-                <th>DOB : </th>
-                <td>{this.state.registeredData[item].sdob}</td>
-              </tr>
-              <tr>
-                <th>Gender : </th>
-                <td>{this.state.registeredData[item].sgender}</td>
-              </tr>
-              <tr>
-                <th>Siblings : </th>
-                <td>{this.state.registeredData[item].sib}</td>
-              </tr>
-              <tr>
-                <th>Father's name : </th>
-                <td>{this.state.registeredData[item].fathername}</td>
-              </tr>
-              <tr>
-                <th>Father's Qualification : </th>
-                <td>{this.state.registeredData[item].fatherquali}</td>
-              </tr>
-              <tr>
-                <th>Father's mail: </th>
-                <td>{this.state.registeredData[item].fathermail}</td>
-              </tr>
-              <tr>
-                <th>Father's mobile no.: </th>
-                <td>{this.state.registeredData[item].fathermob}</td>
-              </tr>
-              <tr>
-                <th>Mother's name : </th>
-                <td>{this.state.registeredData[item].mothername}</td>
-              </tr>
-              <tr>
-                <th>Mother's Qualification : </th>
-                <td>{this.state.registeredData[item].motherquali}</td>
-              </tr>
-              <tr>
-                <th>Mother's mail: </th>
-                <td>{this.state.registeredData[item].mothermail}</td>
-              </tr>
-              <tr>
-                <th>Mother's mobile no.: </th>
-                <td>{this.state.registeredData[item].mothermob}</td>
-              </tr>
-              <tr>
-                <th>Address : </th>
-                <td>{this.state.registeredData[item].addre}</td>
-              </tr>
-            </table>
-          </div>
-        );
-        
-      })
-    // return (
-    //   <div className="showdetails">
-    //     <table>
-    //       <tr>
-    //         <th>Name : </th>
-    //         <td>{this.state.name}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>DOB : </th>
-    //         <td>{this.state.dob}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Gender : </th>
-    //         <td>{this.state.gender}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Siblings : </th>
-    //         <td>{this.state.siblingsdetails}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Father's name : </th>
-    //         <td>{this.state.fname}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Father's Qualification : </th>
-    //         <td>{this.state.fqualifiation}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Father's mail: </th>
-    //         <td>{this.state.fmail}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Father's mobile no.: </th>
-    //         <td>{this.state.fmobile}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Mother's name : </th>
-    //         <td>{this.state.mname}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Mother's Qualification : </th>
-    //         <td>{this.state.mqualifiation}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Mother's mail: </th>
-    //         <td>{this.state.mmail}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Mother's mobile no.: </th>
-    //         <td>{this.state.mmobile}</td>
-    //       </tr>
-    //       <tr>
-    //         <th>Address : </th>
-    //         <td>{this.state.myaddress}</td>
-    //       </tr>
-    //     </table>
-    //   </div>
-    // );
+    return (
+      <div className="showdetails">
+        <h1>Student's Details</h1>
+        <table>
+          <tr>
+            <th>Name : </th>
+            <td>{this.state.registeredData.sname}</td>
+          </tr>
+          <tr>
+            <th>DOB : </th>
+            <td>{this.state.registeredData.sdob}</td>
+          </tr>
+          <tr>
+            <th>Gender : </th>
+            <td>{this.state.registeredData.sgender}</td>
+          </tr>
+          <tr>
+            <th>Siblings : </th>
+            <td>{this.state.registeredData.sib}</td>
+          </tr>
+          <tr>
+            <th>Father's name : </th>
+            <td>{this.state.registeredData.fathername}</td>
+          </tr>
+          <tr>
+            <th>Father's Qualification : </th>
+            <td>{this.state.registeredData.fatherquali}</td>
+          </tr>
+          <tr>
+            <th>Father's mail: </th>
+            <td>{this.state.registeredData.fathermail}</td>
+          </tr>
+          <tr>
+            <th>Father's mobile no.: </th>
+            <td>{this.state.registeredData.fathermob}</td>
+          </tr>
+          <tr>
+            <th>Mother's name : </th>
+            <td>{this.state.registeredData.mothername}</td>
+          </tr>
+          <tr>
+            <th>Mother's Qualification : </th>
+            <td>{this.state.registeredData.motherquali}</td>
+          </tr>
+          <tr>
+            <th>Mother's mail: </th>
+            <td>{this.state.registeredData.mothermail}</td>
+          </tr>
+          <tr>
+            <th>Mother's mobile no.: </th>
+            <td>{this.state.registeredData.mothermob}</td>
+          </tr>
+          <tr>
+            <th>Address : </th>
+            <td>{this.state.registeredData.addre}</td>
+          </tr>
+        </table>
+      </div>
+    );
   };
   submitbtn = () => {
     if (this.state.name === "") {
@@ -364,7 +301,42 @@ export class App extends Component {
 
               addre: this.state.myaddress,
             },
+            name: "",
+            dob: "",
+            gender: "",
+            siblingsdetails: "",
+
+            fname: "",
+            fqualifiation: "",
+            fmail: "",
+            fmobile: "",
+
+            mname: "",
+            mqualifiation: "",
+            mmail: "",
+            mmobile: "",
+
+            myaddress: "",
+
+            errornameempty: "",
+            errordobempty: "",
+            errorgenderempty: "",
+            errorsiblingempty: "",
+
+            errorfnameempty: "",
+            errorfqualiempty: "",
+            errorfmailempty: "",
+            errorfmobileempty: "",
+
+            errormnameempty: "",
+            errormqualiempty: "",
+            errormmailempty: "",
+            errormmobileempty: "",
+
+            erroraddress: "",
           });
+          document.getElementById("g1").checked = false;
+          document.getElementById("g2").checked = false;
         }
       }
     }
