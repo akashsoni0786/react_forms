@@ -112,16 +112,36 @@
 {
   height: 80vh;
   width: 100%;
-  background: url("/home/cedcoss/Desktop/react_forms/hands_on/navigation-website/src/contact.png") no-repeat fixed ;
+  background: url("https://images.unsplash.com/photo-1601121303672-a1e1c155ac37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")  ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  padding: 50px 30%;
  
 }
 .OurProducts{
   height: 80vh;
   width: 100%;
-  background: url("/home/cedcoss/Desktop/react_forms/hands_on/navigation-website/src/product.png");
+  background: url("https://images.unsplash.com/photo-1601121303672-a1e1c155ac37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+    background-size: cover;
+    align-items: center;
+    padding: 50px 30%;
+}
+.OurProducts img{
+  height: 40vh;
 }
 .Home{
   height: 80vh;
   width: 100%;
-  background: url("/home/cedcoss/Desktop/react_forms/hands_on/navigation-website/src/home.png") no-repeat fixed ;
+  background: url("https://images.unsplash.com/photo-1601121303672-a1e1c155ac37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+    background-size: cover;
+    padding: 50px 30%;
+}
+.Home img{
+  height: 40vh;
 }

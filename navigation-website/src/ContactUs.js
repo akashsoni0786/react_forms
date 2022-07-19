@@ -4,7 +4,7 @@ const ContactUs = () => {
   return (
     <div className="ContactUs">
     
-    <h1> Contact Us</h1>
+    <img alt='' src='contactus.png'/>
 
     </div>
   )
