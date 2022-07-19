@@ -61,8 +61,15 @@ export class App extends Component {
     }
   };
   deletebtn = (e) => {
-    this.setState({
-      expences: this.state.expences.filter((exp) => exp.id != e.target.id),
+    this.state.expences.map((i) => {
+      if (i.id == e.target.id) {
+        this.setState({
+          expences: this.state.expences.filter((exp) => exp.id != e.target.id),
+          balance: parseFloat(this.state.balance) + parseFloat(i.amount),
+          expance: parseFloat(this.state.expance) - parseFloat(i.amount),
+          
+        });
+      }
     });
   };
   editbtn = (e) => {
@@ -87,6 +94,7 @@ export class App extends Component {
       this.state.expences.map((i)=>{
         if(i.text == "Grocery"){
           this.state.total = parseFloat(this.state.total)+parseFloat(i.amount)
+          
         }
       })
       this.setState({
